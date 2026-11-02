@@ -1,0 +1,6 @@
+###
+GRPC localhost:5001/greet.GreetService/Greet
+
+{
+  "first_name": "Allan"
+}
