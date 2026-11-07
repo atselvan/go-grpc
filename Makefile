@@ -3,7 +3,7 @@ PACKAGE=github.com/atselvan/go-grpc
 SERVER_DIR = server
 CLIENT_DIR = client
 
-PROJECTS = greet
+PROJECTS = greet calculator
 
 .DEFAULT_GOAL := help
 
@@ -23,6 +23,9 @@ all: $(PROJECTS) ## Generate Pbs and build for all projects
 
 greet: ## Generate Pbs and build for greet
 	$(call build-proto,greet)
+
+calculator: ## Generate Pbs and build for calculator
+	$(call build-proto,calculator)
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?\#\# .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?\#\# "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
